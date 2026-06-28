@@ -83,4 +83,28 @@ editar(task: Task): void {
 
 }
 
+eliminar(task: Task): void {
+
+  alert('Entró al método eliminar');
+
+  if (!task.id) return;
+
+  if (confirm(`¿Desea eliminar la tarea "${task.titulo}"?`)) {
+
+    this.taskService.deleteTask(task.id).subscribe({
+
+      next: () => {
+
+        this.loadTasks();
+
+      },
+
+      error: (err) => console.error(err)
+
+    });
+
+  }
+
+}
+
 }

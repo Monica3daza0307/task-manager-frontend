@@ -32,22 +32,35 @@
   </ng-container>
 
   <!-- Acciones -->
-  <ng-container matColumnDef="acciones">
-    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+<ng-container matColumnDef="acciones">
 
-    <td mat-cell *matCellDef="let task">
+  <th mat-header-cell *matHeaderCellDef>Acciones</th>
 
-      <button
+  <td mat-cell *matCellDef="let task">
+
+    <!-- Editar -->
+    <button
       mat-icon-button
       color="primary"
       (click)="editar(task)">
 
-    <mat-icon>edit</mat-icon>
+      <mat-icon>edit</mat-icon>
 
-</button>
-    </td>
+    </button>
 
-  </ng-container>
+    <!-- Eliminar -->
+    <button
+      mat-icon-button
+      color="warn"
+      (click)="eliminar(task)">
+
+      <mat-icon>delete</mat-icon>
+
+    </button>
+
+  </td>
+
+</ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 
