@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { TaskList } from './components/task-list/task-list';
-import { Toolbar } from './components/toolbar/toolbar';
+import { ToolbarComponent } from './components/toolbar/toolbar';
 
 @Component({
   selector: 'app-root',
   imports: [
-  Toolbar,
+  ToolbarComponent,
   TaskList
 ],
   templateUrl: './app.html',

@@ -1,1 +1,70 @@
-<p>task-form works!</p>
+<h2 mat-dialog-title>
+
+  {{ data ? 'Editar tarea' : 'Nueva tarea' }}
+
+</h2>
+
+<mat-dialog-content>
+
+    <form [formGroup]="taskForm">
+
+        <mat-form-field appearance="outline" class="full-width">
+
+            <mat-label>Título</mat-label>
+
+            <input matInput formControlName="titulo">
+
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline" style="width:100%;">
+
+            <mat-label>Descripción</mat-label>
+
+            <textarea matInput rows="4" formControlName="descripcion">
+      </textarea>
+
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field appearance="outline" style="width:100%;">
+
+            <mat-label>Estado</mat-label>
+
+            <mat-select formControlName="estado">
+
+                <mat-option value="pendiente">
+                    Pendiente
+                </mat-option>
+
+                <mat-option value="en progreso">
+                    En progreso
+                </mat-option>
+
+                <mat-option value="completada">
+                    Completada
+                </mat-option>
+
+            </mat-select>
+
+        </mat-form-field>
+
+    </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+    <button
+  mat-raised-button
+  color="primary"
+  (click)="guardar()"
+  [disabled]="taskForm.invalid">
+
+  {{ data ? 'Actualizar' : 'Guardar' }}
+
+</button>
+
+</mat-dialog-actions>

@@ -9,6 +9,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { TaskService } from '../../services/task';
 import { Task } from '../../models/task';
 
+import { MatDialog } from '@angular/material/dialog';
+import { TaskFormComponent } from '../task-form/task-form';
+
 @Component({
   selector: 'app-task-list',
   standalone: true,
@@ -33,11 +36,23 @@ export class TaskList implements OnInit {
     'acciones'
   ];
 
-  constructor(private taskService: TaskService) {}
+  constructor(
+  private taskService: TaskService,
+  private dialog: MatDialog
+) {}
 
   ngOnInit(): void {
+
+  this.loadTasks();
+
+  this.taskService.refreshRequired$.subscribe(() => {
     this.loadTasks();
-  }
+  });
+
+    
+  
+
+}
 
   loadTasks(): void {
   this.taskService.getTasks().subscribe({
@@ -49,6 +64,23 @@ export class TaskList implements OnInit {
       console.error('Error:', error);
     }
   });
+}
+
+editar(task: Task): void {
+
+  const dialogRef = this.dialog.open(TaskFormComponent, {
+    width: '600px',
+    data: task
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+
+    if (result) {
+      this.loadTasks();
+    }
+
+  });
+
 }
 
 }
