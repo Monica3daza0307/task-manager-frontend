@@ -1,59 +1,251 @@
-# Frontend
+# 📦 Task Manager Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.30.
+## 🚀 Descripción
 
-## Development server
+Task Manager Frontend es una aplicación desarrollada con **Angular 20** y **Angular Material** que permite gestionar tareas mediante una interfaz moderna e intuitiva.
 
-To start a local development server, run:
+La aplicación consume una API REST desarrollada en Node.js y Express para realizar operaciones CRUD (Crear, Consultar, Actualizar y Eliminar) sobre tareas almacenadas en MySQL.
+
+Adicionalmente, incluye un componente independiente que consume una API pública (**JSONPlaceholder**) mediante una petición GET, cumpliendo con los requerimientos de la prueba técnica.
+
+---
+
+# ✨ Características
+
+* Interfaz desarrollada con Angular 20.
+* Uso de Angular Material.
+* Componentes Standalone.
+* Formularios Reactivos (Reactive Forms).
+* CRUD completo de tareas.
+* Diálogo reutilizable para crear y editar tareas.
+* Actualización automática de la tabla después de cada operación.
+* Consumo de API REST propia.
+* Consumo de API pública (JSONPlaceholder).
+* Diseño responsive básico.
+
+---
+
+# 🛠 Tecnologías utilizadas
+
+* Angular 20
+* Angular Material 20
+* TypeScript
+* RxJS
+* Reactive Forms
+* HttpClient
+* HTML5
+* CSS3
+* Git
+* GitHub
+
+---
+
+# 🎨 Angular Material
+
+La interfaz utiliza componentes de Angular Material para proporcionar una experiencia de usuario moderna y consistente.
+
+Componentes utilizados:
+
+* Toolbar
+* Table
+* Card
+* Dialog
+* Form Field
+* Input
+* Select
+* Button
+* Chip
+* Icon
+
+---
+
+# 📁 Arquitectura del proyecto
+
+```text
+frontend/
+│
+├── components/
+│   ├── toolbar/
+│   ├── task-list/
+│   ├── task-form/
+│   └── public-api/
+│
+├── models/
+│   └── task.ts
+│
+├── services/
+│   ├── task.service.ts
+│   └── public-api.service.ts
+│
+├── app.config.ts
+├── app.routes.ts
+└── main.ts
+```
+
+### Descripción de la estructura
+
+| Carpeta    | Responsabilidad                                |
+| ---------- | ---------------------------------------------- |
+| components | Componentes visuales de la aplicación.         |
+| services   | Comunicación con la API REST y la API pública. |
+| models     | Interfaces y modelos de datos.                 |
+
+---
+
+# 🧩 Componentes
+
+## Toolbar
+
+Barra superior de navegación de la aplicación.
+
+---
+
+## Task List
+
+Muestra todas las tareas utilizando una tabla de Angular Material.
+
+Permite:
+
+* Listar tareas
+* Editar tareas
+* Eliminar tareas
+
+---
+
+## Task Form
+
+Formulario reutilizable para crear y editar tareas mediante un diálogo (MatDialog).
+
+Incluye validaciones utilizando Reactive Forms.
+
+---
+
+## Public API
+
+Componente independiente encargado de consumir información desde:
+
+```text
+https://jsonplaceholder.typicode.com/posts
+```
+
+Cumpliendo el requisito de consumir una API pública mediante una petición GET.
+
+---
+
+# 🔄 Servicios
+
+## TaskService
+
+Encargado de comunicarse con el Backend mediante HttpClient.
+
+Operaciones implementadas:
+
+* Obtener tareas
+* Crear tarea
+* Actualizar tarea
+* Eliminar tarea
+
+---
+
+## PublicApiService
+
+Consume la API pública JSONPlaceholder para mostrar información en un componente independiente.
+
+---
+
+# 📄 Modelo de datos
+
+La aplicación utiliza la siguiente interfaz:
+
+```typescript
+export interface Task {
+  id?: number;
+  titulo: string;
+  descripcion: string;
+  estado: string;
+  fecha_creacion?: string;
+}
+```
+
+---
+
+# ⚙ Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/Monica3daza0307/task-manager-frontend.git
+```
+
+Ingresar al proyecto:
+
+```bash
+cd task-manager-frontend
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+---
+
+# ▶ Ejecutar el proyecto
+
+Iniciar el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación estará disponible en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+# 🚀 Funcionalidades
 
-## Building
+* Visualizar tareas.
+* Crear nuevas tareas.
+* Editar tareas existentes.
+* Eliminar tareas.
+* Mostrar estados mediante Angular Material.
+* Consumir una API pública.
+* Comunicación con Backend mediante HttpClient.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+# 📷 Capturas de pantalla
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+> Agregar aquí las capturas de la aplicación:
+>
+> * Pantalla principal.
+![alt text](image.png)
+> * Crear tarea.
+![alt text](image-1.png)
+> * Editar tarea.
+![alt text](image-2.png)
+> * Eliminar tarea.
+![alt text](image-3.png)
+> * Componente de API pública.
+![alt text](image-4.png)
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+# 🔗 Backend relacionado
 
-```bash
-ng test
-```
+Repositorio del Backend:
 
-## Running end-to-end tests
+**https://github.com/Monica3daza0307/task-manager-backend**
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+# 👩‍💻 Autora
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+**Mónica Daza**
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyecto desarrollado como parte de una prueba técnica Full Stack utilizando Angular 20, Angular Material, Node.js, Express y MySQL.
