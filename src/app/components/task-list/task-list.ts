@@ -76,7 +76,6 @@ export class TaskList implements OnInit {
   loadTasks(): void {
   this.taskService.getTasks().subscribe({
     next: (data) => {
-      console.log('Datos recibidos:', data);
       this.tasks = data;
     },
     error: (error) => {
@@ -103,8 +102,6 @@ editar(task: Task): void {
 }
 
 eliminar(task: Task): void {
-
-  alert('Entró al método eliminar');
 
   if (!task.id) return;
 
