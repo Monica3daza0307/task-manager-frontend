@@ -1,8 +1,28 @@
-<button
+<mat-toolbar class="toolbar">
+
+  <div class="toolbar-brand">
+
+    <span class="title">
+      Task Manager
+    </span>
+
+    <span class="subtitle">
+      Angular • Node.js • MySQL
+    </span>
+
+  </div>
+
+  <span class="spacer"></span>
+
+  <button
     mat-raised-button
-    color="primary"
+    color="accent"
     (click)="nuevaTarea()">
+
+    <mat-icon>add</mat-icon>
 
     Nueva tarea
 
-</button>
+  </button>
+
+</mat-toolbar>

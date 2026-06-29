@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TaskFormComponent } from '../task-form/task-form';
 
@@ -9,9 +10,10 @@ import { TaskFormComponent } from '../task-form/task-form';
   selector: 'app-toolbar',
   standalone: true,
   imports: [
-    MatToolbarModule,
-    MatButtonModule
-  ],
+  MatToolbarModule,
+  MatButtonModule,
+  MatIconModule
+],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.scss'
 })

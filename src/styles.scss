@@ -6,7 +6,8 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
-html {
+html,
+body {
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
@@ -15,7 +16,14 @@ html {
     typography: Roboto,
     density: 0,
   ));
+  margin: 0;
+
+  background: #f5f7fa;
+
+  font-family: Roboto, sans-serif;
 }
+
+
 
 body {
   // Default the application to a light color theme. This can be changed to
@@ -37,3 +45,21 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-card{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+button{
+
+   margin-right:8px;
+
+}
+
+.mat-mdc-row:hover{
+
+    background:#eef5ff;
+
+}

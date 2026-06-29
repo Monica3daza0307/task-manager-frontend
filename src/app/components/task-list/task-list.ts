@@ -11,17 +11,19 @@ import { Task } from '../../models/task';
 
 import { MatDialog } from '@angular/material/dialog';
 import { TaskFormComponent } from '../task-form/task-form';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
   imports: [
-    CommonModule,
-    MatTableModule,
-    MatButtonModule,
-    MatIconModule,
-    MatChipsModule
-  ],
+  CommonModule,
+  MatTableModule,
+  MatButtonModule,
+  MatIconModule,
+  MatChipsModule,
+  MatCardModule
+],
   templateUrl: './task-list.html',
   styleUrl: './task-list.scss'
 })
@@ -35,6 +37,23 @@ export class TaskList implements OnInit {
     'estado',
     'acciones'
   ];
+
+  getChipColor(estado: string): 'primary' | 'accent' | 'warn' {
+
+  switch (estado.toLowerCase()) {
+
+    case 'completada':
+      return 'primary';
+
+    case 'en progreso':
+      return 'accent';
+
+    default:
+      return 'warn';
+
+  }
+
+}
 
   constructor(
   private taskService: TaskService,
