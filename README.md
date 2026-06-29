@@ -221,7 +221,6 @@ http://localhost:4200
 
 # 📷 Capturas de pantalla
 
-> Agregar aquí las capturas de la aplicación:
 >
 > * Pantalla principal.
 ![alt text](image.png)
